@@ -1,5 +1,5 @@
 {
-	"name": "wrapper_generate",
+	"name": "wrapper_builder",
 	"description": "Store a D program compressed inside another D program",
 	"authors": [
 		"Matthew Brennan Jones <matthew.brennan.jones@gmail.com>",
@@ -8,7 +8,7 @@
 	"copyright": "Copyright (c) 2017 Matthew Brennan Jones",
 	"license": "BSL-1.0",
 
-	"targetName": "wrapper_generate",
+	"targetName": "wrapper_builder",
 
 	"dependencies": {
 		"cbor-d": "~>0.5.4",
@@ -16,9 +16,5 @@
 	},
 
 	"targetType": "executable",
-	"mainSourceFile": "main.d",
-
-	"postGenerateCommands" : [
-		"cd ../wrapper_builder ; dub build"
-	]
+	"mainSourceFile": "../wrapper_generate/wrapped.d",
 }
