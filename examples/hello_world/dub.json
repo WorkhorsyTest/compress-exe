@@ -18,6 +18,6 @@
 	"mainSourceFile": "main.d",
 
 	"postGenerateCommands" : [
-		"cd ../../ ; dub run -- examples/hello_world/hello_world"
+		"cd ../../wrapper_generate ; dub run -- ../examples/hello_world/hello_world"
 	]
 }

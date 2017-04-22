@@ -11,6 +11,7 @@ import compress;
 
 
 int main(string[] args) {
+
 	// Get a list of all the files to store
 	string[] file_names = args[1 .. $];
 

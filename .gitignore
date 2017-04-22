@@ -4,7 +4,6 @@ wrapped.d
 .dub
 dub.selections.json
 
-examples/hello_world/.dub
-examples/hello_world/dub.selections.json
+
 
 lib/*
