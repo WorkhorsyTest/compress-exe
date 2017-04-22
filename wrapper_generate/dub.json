@@ -19,6 +19,6 @@
 	"mainSourceFile": "main.d",
 
 	"postGenerateCommands" : [
-		"cd ../wrapper_builder ; dub build"
+		"cd ../wrapper_builder ; dub run --force"
 	]
 }

@@ -13,6 +13,7 @@ import compress;
 void UncompressFiles(string[] file_names, ubyte[] compressed_blobs) {
 	import std.file;
 	import std.stdio;
+	stdout.writefln("file_names:%s", file_names);
 
 	// Uncompress the file blobs
 	ubyte[] blob = cast(ubyte[]) compressed_blobs;
