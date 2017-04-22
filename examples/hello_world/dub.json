@@ -1,5 +1,5 @@
 {
-	"name": "compress_exe",
+	"name": "hello_world",
 	"description": "Store a D program compressed inside another D program",
 	"authors": [
 		"Matthew Brennan Jones <matthew.brennan.jones@gmail.com>",
@@ -7,15 +7,17 @@
 	"homepage": "https://github.com/workhorsy/compress-exe",
 	"copyright": "Copyright (c) 2017 Matthew Brennan Jones",
 	"license": "BSL-1.0",
-	"importPaths": ["source/"],
 
-	"targetName": "compress_exe",
-	"targetPath": "lib",
+	"targetName": "hello_world",
 
 	"dependencies": {
-		"cbor-d": "~>0.5.4",
+		"compress_exe": { "path" : "../../../compress-exe" },
 	},
 
 	"targetType": "executable",
-	"mainSourceFile": "source/main.d",
+	"mainSourceFile": "main.d",
+
+	"postGenerateCommands" : [
+		"cd ../../ ; dub run -- examples/hello_world/hello_world"
+	]
 }
