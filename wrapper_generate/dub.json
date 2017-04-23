@@ -18,7 +18,7 @@
 	"targetType": "executable",
 	"mainSourceFile": "main.d",
 
-	"postGenerateCommands" : [
+	"XXXpostGenerateCommands" : [
 		"./wrapper_generate",
 		"cd ../wrapper_builder ; dub run --force"
 	]

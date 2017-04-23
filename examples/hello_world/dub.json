@@ -18,6 +18,6 @@
 	"mainSourceFile": "main.d",
 
 	"postGenerateCommands" : [
-		"cd ../../wrapper_generate ; dub run --force -- ../examples/hello_world/hello_world"
+		"cd ../../wrapper_generate ; dub run --force -- ../examples/hello_world/compress_exe.json"
 	]
 }

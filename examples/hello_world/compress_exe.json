@@ -1,0 +1,7 @@
+{
+	"start_exe_name" : "hello_world",
+	"wrapper_exe_name" : "hello_world_wrapper",
+	"additional_files" : {
+		"hello_world/hello_world" : "hello_world/hello_world"
+	}
+}

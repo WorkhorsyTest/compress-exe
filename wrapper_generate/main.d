@@ -6,11 +6,40 @@
 import std.stdio;
 import std.path;
 import std.array;
+import std.json;
+import std.file;
+import std.string;
 import compress_exe;
 import compress;
 
 
 int main(string[] args) {
+	stdout.writefln("!!! args:%s", args);
+
+	// Get the json file absolute path
+	string json_file_name = args[1].absolutePath().asNormalizedPath().array;
+	if (! std.file.exists(json_file_name)) {
+		throw new Exception("No such json file: \"%s\"".format(json_file_name));
+	}
+
+	// Load the json file
+//	try {
+		auto data = std.file.readText(json_file_name);
+		JSONValue json = parseJSON(data);
+		auto json_obj = json.object();
+
+		string start_exe_name = json_obj["start_exe_name"].str;
+		string wrapper_exe_name = json_obj["wrapper_exe_name"].str;
+		string[string] additional_files;
+		foreach (k, v ; json_obj["additional_files"].object()) {
+			additional_files[k] = v.str;
+		}
+		stdout.writefln("!!! start_exe_name:%s", start_exe_name);
+		stdout.writefln("!!! wrapper_exe_name:%s", wrapper_exe_name);
+		stdout.writefln("!!! additional_files:%s", additional_files);
+//	} catch (Throwable) {
+
+//	}
 
 	// Get a list of all the files to store
 	string[] file_names = args[1 .. $];
